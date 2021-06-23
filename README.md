@@ -36,6 +36,7 @@ pix.merchant_name  = 'William Costa'
 pix.merchant_city  = 'SAO PAULO'
 pix.transaction_id = 'WDEV1234'
 pix.amount         = '100.00'
+pix.repeatable     = false
 
 puts pix.payload
 puts pix.base64
