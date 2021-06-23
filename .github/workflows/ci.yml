@@ -1,4 +1,4 @@
-name: QrCode Pix Ruby CI
+name: QrCode Pix Ruby - CI
 
 on: [push, pull_request]
 

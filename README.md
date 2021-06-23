@@ -1,4 +1,9 @@
-# qrcode_pix_ruby
+# QRCode Pix Ruby
+
+![master](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?branch=master)
+[![Gem Version](https://badge.fury.io/rb/qrcode_pix_ruby.svg)](https://badge.fury.io/rb/qrcode_pix_ruby)
+[![Gem](https://img.shields.io/gem/dt/qrcode_pix_ruby.svg)]()
+[![license](https://img.shields.io/github/license/pedrofurtado/qrcode_pix_ruby.svg)]()
 
 Ruby gem for Qrcode generation of Pix (Pagamento Instantâneo Brasileiro - Banco Central do Brasil)
 
