@@ -1,22 +1,28 @@
 # frozen_string_literal: true
 
-RSpec.describe PixRuby do
-  it "has a version number" do
-    expect(PixRuby::VERSION).not_to be nil
+RSpec.describe QrcodePixRuby do
+  it 'has a valid version number' do
+    expect(QrcodePixRuby::VERSION).not_to be nil
+    expect(QrcodePixRuby::VERSION).to match /^[0-9]+\.[0-9]+\.[0-9]+$/
   end
 
-  it "does something useful" do
-    expect(true).to eq(true)
+  it 'generates default payload and base64, when nothing is defined' do
+    pix = QrcodePixRuby::Payload.new
+    expect(pix.payload).to eq '00020126260014br.gov.bcb.pix0100020052040000530398654005802BR5900600062040500630462E0'
+    expect(pix.base64).to eq ''
   end
 
-  it "generate sample static payload" do
-    pix_qrcode_payload = PixRuby::QrCode::Static.new
-    pix_qrcode_payload.pix_key = '12345678900'
-    pix_qrcode_payload.description = 'Pagamento do pedido 123456' # 'Descrição do pagamento, que irá aparecer na tela do app do banco'
-    pix_qrcode_payload.merchant_name = 'William Costa' # nome dotitular da conta
-    pix_qrcode_payload.merchant_city = 'SAO PAULO' # 'Cidade do titular da conta'
-    pix_qrcode_payload.txid = 'WDEV1234' # 'ID da transação'
-    pix_qrcode_payload.amount = '100.00' # precisa ter 2 casas apos o ponto, tem q separar por ponto E NAO pode ter separador de milhar.
-    expect(pix_qrcode_payload.payload).to eq('00020126630014br.gov.bcb.pix0111123456789000226Pagamento do pedido 1234565204000053039865406100.005802BR5913William Costa6009SAO PAULO62120508WDEV12346304E9BF')
+  it 'generates valids payloads and base64' do
+    pix = QrcodePixRuby::Payload.new
+
+    pix.pix_key        = '12345678900'
+    pix.description    = 'Pagamento do pedido 123456'
+    pix.merchant_name  = 'William Costa'
+    pix.merchant_city  = 'SAO PAULO'
+    pix.transaction_id = 'WDEV1234'
+    pix.amount         = '100.00'
+
+    expect(pix.payload).to eq '00020126630014br.gov.bcb.pix0111123456789000226Pagamento do pedido 1234565204000053039865406100.005802BR5913William Costa6009SAO PAULO62120508WDEV12346304E9BF'
+    expect(pix.base64).to eq ''
   end
 end
