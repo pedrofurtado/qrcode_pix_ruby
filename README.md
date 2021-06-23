@@ -41,6 +41,18 @@ puts pix.payload
 puts pix.base64
 ```
 
+## Useful links
+
+* https://github.com/joseviniciusnunes/qrcode-pix
+* https://www.gerarpix.com.br
+* https://github.com/fbbergamo/gerador-pix
+* https://pix.ae
+* https://pix.nascent.com.br/tools/pix-qr-decoder
+* https://openpix.com.br/qrcode/scanner
+* https://openpix.com.br/qrcode/debug
+* https://github.com/william-costa/wdev-qrcode-pix-estatico-php
+* https://www.youtube.com/watch?v=eO11iFgrdCA
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/pedrofurtado/qrcode_pix_ruby. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/pedrofurtado/qrcode_pix_ruby/blob/master/CODE_OF_CONDUCT.md).
