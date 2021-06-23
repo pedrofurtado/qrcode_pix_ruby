@@ -1,6 +1,6 @@
 # QRCode Pix Ruby
 
-[![QrCode Pix Ruby - CI](https://github.com/pedrofurtado/qrcode_pix_ruby/actions/workflows/main.yml/badge.svg)](https://github.com/pedrofurtado/qrcode_pix_ruby/actions/workflows/main.yml)
+[![CI](https://github.com/pedrofurtado/qrcode_pix_ruby/actions/workflows/main.yml/badge.svg)](https://github.com/pedrofurtado/qrcode_pix_ruby/actions/workflows/main.yml)
 [![Gem Version](https://badge.fury.io/rb/qrcode_pix_ruby.svg)](https://badge.fury.io/rb/qrcode_pix_ruby)
 [![Gem](https://img.shields.io/gem/dt/qrcode_pix_ruby.svg)]()
 [![license](https://img.shields.io/github/license/pedrofurtado/qrcode_pix_ruby.svg)]()

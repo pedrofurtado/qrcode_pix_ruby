@@ -1,4 +1,4 @@
-name: QrCode Pix Ruby - Publish to Rubygems
+name: Publish to Rubygems
 
 on:
   release:
