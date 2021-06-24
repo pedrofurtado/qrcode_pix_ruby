@@ -8,7 +8,9 @@
 [![license](https://img.shields.io/github/license/pedrofurtado/qrcode_pix_ruby.svg)]()
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/pedrofurtado/qrcode_pix_ruby)
 
-Ruby gem for Qrcode generation of Pix (Pagamento Instantâneo Brasileiro - Banco Central do Brasil)
+Ruby gem for Qrcode generation of Pix (Pagamento Instantâneo Brasileiro - Banco Central do Brasil).
+
+<img src="https://github.com/pedrofurtado/qrcode_pix_ruby/blob/master/pix_logo.png?raw=true" height="100px" />
 
 ## Installation
 
