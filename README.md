@@ -1,9 +1,11 @@
 # QRCode Pix Ruby
 
+[![codecov](https://codecov.io/gh/pedrofurtado/qrcode_pix_ruby/branch/master/graph/badge.svg?token=OK3S19R5CG)](https://codecov.io/gh/pedrofurtado/qrcode_pix_ruby)
 [![CI](https://github.com/pedrofurtado/qrcode_pix_ruby/actions/workflows/ci.yml/badge.svg)](https://github.com/pedrofurtado/qrcode_pix_ruby/actions/workflows/ci.yml)
 [![Gem Version](https://badge.fury.io/rb/qrcode_pix_ruby.svg)](https://badge.fury.io/rb/qrcode_pix_ruby)
 [![Gem](https://img.shields.io/gem/dt/qrcode_pix_ruby.svg)]()
 [![license](https://img.shields.io/github/license/pedrofurtado/qrcode_pix_ruby.svg)]()
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/pedrofurtado/qrcode_pix_ruby)
 
 Ruby gem for Qrcode generation of Pix (Pagamento Instant√¢neo Brasileiro - Banco Central do Brasil)
 
@@ -30,21 +32,29 @@ require 'qrcode_pix_ruby'
 
 pix = QrcodePixRuby::Payload.new
 
-pix.pix_key        = '12345678900'
+pix.pix_key        = 'minhachavedopix'
 pix.description    = 'Pagamento do pedido 123456'
-pix.merchant_name  = 'William Costa'
+pix.merchant_name  = 'Fulano de Tal'
 pix.merchant_city  = 'SAO PAULO'
-pix.transaction_id = 'WDEV1234'
+pix.transaction_id = 'TID12345'
 pix.amount         = '100.00'
+pix.currency       = '986'
+pix.country_code   = 'BR'
+pix.postal_code    = '01131010'
 pix.repeatable     = false
 
+# QRCode copia-e-cola
 puts pix.payload
+
+# QRCode est·tico
 puts pix.base64
 ```
 
 ## Useful links
 
 * https://github.com/joseviniciusnunes/qrcode-pix
+* https://www.bcb.gov.br/content/estabilidadefinanceira/forumpireunioes/AnexoI-PadroesParaIniciacaodoPix.pdf
+* https://github.com/renatomb/php_qrcode_pix
 * https://www.gerarpix.com.br
 * https://github.com/fbbergamo/gerador-pix
 * https://pix.ae

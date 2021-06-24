@@ -8,6 +8,8 @@ jobs:
     strategy:
       matrix:
         ruby-version: [2.7, 3.0]
+    env:
+      CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
     steps:
       - uses: actions/checkout@v2
 
