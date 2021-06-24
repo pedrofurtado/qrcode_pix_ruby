@@ -64,6 +64,9 @@ puts pix.base64
 * https://openpix.com.br/qrcode/debug
 * https://github.com/william-costa/wdev-qrcode-pix-estatico-php
 * https://www.youtube.com/watch?v=eO11iFgrdCA
+* https://qrcodepix.dinheiro.tech
+* http://decoder.qrcodepix.dinheiro.tech
+* https://www.bcb.gov.br/estabilidadefinanceira/pix
 
 ## Contributing
 
