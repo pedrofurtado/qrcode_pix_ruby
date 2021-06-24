@@ -51,7 +51,7 @@ module QrcodePixRuby
     end
 
     def base64
-      ::RQRCode::QRCode.new(payload).as_png(bit_depth: 1, border_modules: 0, color_mode: 0, color: 'black', file: nil, fill: 'white', module_px_size: 6, resize_exactly_to: false, resize_gte_to: false, size: 200).to_data_url
+      ::RQRCode::QRCode.new(payload).as_png(bit_depth: 1, border_modules: 0, color_mode: 0, color: 'black', file: nil, fill: 'white', module_px_size: 6, resize_exactly_to: false, resize_gte_to: false).to_data_url
     end
 
     private
