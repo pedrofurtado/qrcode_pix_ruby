@@ -5,8 +5,8 @@ require_relative 'lib/qrcode_pix_ruby/version'
 Gem::Specification.new do |spec|
   spec.name                        = 'qrcode_pix_ruby'
   spec.version                     = QrcodePixRuby::VERSION
-  spec.authors                     = ["Pedro Furtado", "Marcio de Jesus"]
-  spec.email                       = ["pedro.felipe.azevedo.furtado@gmail.com", "marciodejesusrj@gmail.com"]
+  spec.authors                     = ["Pedro Furtado", "Marcio de Jesus", "William Radi", "Leonardo Comar"]
+  spec.email                       = ["pedro.felipe.azevedo.furtado@gmail.com", "marciodejesusrj@gmail.com", "williamw@lbv.org.br", "lfcomar@lbv.org.br"]
   spec.summary                     = "Ruby gem for Qrcode generation of Pix (Pagamento Instantâneo Brasileiro - Banco Central do Brasil)"
   spec.description                 = "Ruby gem for Qrcode generation of Pix (Pagamento Instantâneo Brasileiro - Banco Central do Brasil)"
   spec.homepage                    = "https://github.com/pedrofurtado/qrcode_pix_ruby"
