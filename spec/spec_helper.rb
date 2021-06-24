@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
-require 'simplecov'
-SimpleCov.start
-
-require 'codecov'
-SimpleCov.formatter = SimpleCov::Formatter::Codecov
+if ENV['CODECOV_TOKEN']
+  require 'simplecov'
+  SimpleCov.start
+  require 'codecov'
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+end
 
 require 'qrcode_pix_ruby'
 
