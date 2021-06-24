@@ -1,10 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe QrcodePixRuby do
-  it 'QRCode - Base64' do
-    pix = QrcodePixRuby::Payload.new
-    expect(pix.base64).to eq ''
-  end
+  it 'QRCode - Base64'
 
   it 'QRCode - Payload - 01 - Basic' do
     pix = QrcodePixRuby::Payload.new
