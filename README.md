@@ -1,5 +1,6 @@
 # QRCode Pix Ruby
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/ff1952ca066c27953773/maintainability)](https://codeclimate.com/github/pedrofurtado/qrcode_pix_ruby/maintainability)
 [![codecov](https://codecov.io/gh/pedrofurtado/qrcode_pix_ruby/branch/master/graph/badge.svg?token=OK3S19R5CG)](https://codecov.io/gh/pedrofurtado/qrcode_pix_ruby)
 [![CI](https://github.com/pedrofurtado/qrcode_pix_ruby/actions/workflows/ci.yml/badge.svg)](https://github.com/pedrofurtado/qrcode_pix_ruby/actions/workflows/ci.yml)
 [![Gem Version](https://badge.fury.io/rb/qrcode_pix_ruby.svg)](https://badge.fury.io/rb/qrcode_pix_ruby)
