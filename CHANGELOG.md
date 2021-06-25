@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.3.2] - 2021-06-24
+
+- Setup for run tests/specs locally with Docker
+
 ## [0.3.1] - 2021-06-24
 
 - More documentation
