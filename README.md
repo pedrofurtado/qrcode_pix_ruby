@@ -74,6 +74,21 @@ puts pix.base64
 * https://gerencianet.com.br/blog/qr-code-estatico-qr-code-dinamico-no-pix
 * https://blog.juno.com.br/pix-qr-code-estatico-x-qr-code-dinamico
 
+## Execute tests/specs
+
+To execute gem tests locally, use Docker with the commands below:
+
+```bash
+git clone https://github.com/pedrofurtado/qrcode_pix_ruby
+cd qrcode_pix_ruby/
+docker build -t qrcode_pix_ruby_specs .
+
+# Then, run this command how many times you want, 
+# after editing local files, and so on, to get 
+# feedback from test suite of gem.
+docker run -v $(pwd):/app/ -it qrcode_pix_ruby_specs
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/pedrofurtado/qrcode_pix_ruby. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/pedrofurtado/qrcode_pix_ruby/blob/master/CODE_OF_CONDUCT.md).
