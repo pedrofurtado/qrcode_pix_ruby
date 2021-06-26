@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+## [0.3.3] - 2021-06-25
+
+- Rubocop setup
+- Add rubies 2.3, 2.4, 2.5 and 2.6 to support of gem
+
 ## [0.3.2] - 2021-06-24
 
 - Setup for run tests/specs locally with Docker

@@ -1,0 +1,28 @@
+AllCops:
+  NewCops: enable
+  SuggestExtensions: false
+  Exclude:
+    - spec/*
+
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - qrcode_pix_ruby.gemspec
+
+Metrics/MethodLength:
+  Max: 20
+
+Gemspec/RequiredRubyVersion:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockNesting:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false

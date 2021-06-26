@@ -4,22 +4,22 @@ require 'rqrcode'
 
 module QrcodePixRuby
   class Payload
-    ID_PAYLOAD_FORMAT_INDICATOR                 = '00'.freeze
-    ID_POINT_OF_INITIATION_METHOD               = '01'.freeze
-    ID_MERCHANT_ACCOUNT_INFORMATION             = '26'.freeze
-    ID_MERCHANT_ACCOUNT_INFORMATION_GUI         = '00'.freeze
-    ID_MERCHANT_ACCOUNT_INFORMATION_KEY         = '01'.freeze
-    ID_MERCHANT_ACCOUNT_INFORMATION_DESCRIPTION = '02'.freeze
-    ID_MERCHANT_CATEGORY_CODE                   = '52'.freeze
-    ID_TRANSACTION_CURRENCY                     = '53'.freeze
-    ID_TRANSACTION_AMOUNT                       = '54'.freeze
-    ID_COUNTRY_CODE                             = '58'.freeze
-    ID_MERCHANT_NAME                            = '59'.freeze
-    ID_MERCHANT_CITY                            = '60'.freeze
-    ID_POSTAL_CODE                              = '61'.freeze
-    ID_ADDITIONAL_DATA_FIELD_TEMPLATE           = '62'.freeze
-    ID_ADDITIONAL_DATA_FIELD_TEMPLATE_TXID      = '05'.freeze
-    ID_CRC16                                    = '63'.freeze
+    ID_PAYLOAD_FORMAT_INDICATOR                 = '00'
+    ID_POINT_OF_INITIATION_METHOD               = '01'
+    ID_MERCHANT_ACCOUNT_INFORMATION             = '26'
+    ID_MERCHANT_ACCOUNT_INFORMATION_GUI         = '00'
+    ID_MERCHANT_ACCOUNT_INFORMATION_KEY         = '01'
+    ID_MERCHANT_ACCOUNT_INFORMATION_DESCRIPTION = '02'
+    ID_MERCHANT_CATEGORY_CODE                   = '52'
+    ID_TRANSACTION_CURRENCY                     = '53'
+    ID_TRANSACTION_AMOUNT                       = '54'
+    ID_COUNTRY_CODE                             = '58'
+    ID_MERCHANT_NAME                            = '59'
+    ID_MERCHANT_CITY                            = '60'
+    ID_POSTAL_CODE                              = '61'
+    ID_ADDITIONAL_DATA_FIELD_TEMPLATE           = '62'
+    ID_ADDITIONAL_DATA_FIELD_TEMPLATE_TXID      = '05'
+    ID_CRC16                                    = '63'
 
     attr_accessor :pix_key,
                   :repeatable,
@@ -33,7 +33,7 @@ module QrcodePixRuby
                   :amount
 
     def payload
-      p  = ''
+      p = ''
 
       p += emv(ID_PAYLOAD_FORMAT_INDICATOR, '01')
       p += emv_repeatable
@@ -51,7 +51,17 @@ module QrcodePixRuby
     end
 
     def base64
-      ::RQRCode::QRCode.new(payload).as_png(bit_depth: 1, border_modules: 0, color_mode: 0, color: 'black', file: nil, fill: 'white', module_px_size: 6, resize_exactly_to: false, resize_gte_to: false).to_data_url
+      ::RQRCode::QRCode.new(payload).as_png(
+        bit_depth: 1,
+        border_modules: 0,
+        color_mode: 0,
+        color: 'black',
+        file: nil,
+        fill: 'white',
+        module_px_size: 6,
+        resize_exactly_to: false,
+        resize_gte_to: false
+      ).to_data_url
     end
 
     private
@@ -66,41 +76,34 @@ module QrcodePixRuby
     end
 
     def emv_merchant
-      merchant_gui         = emv ID_MERCHANT_ACCOUNT_INFORMATION_GUI, 'BR.GOV.BCB.PIX'
-      merchant_pix_key     = emv ID_MERCHANT_ACCOUNT_INFORMATION_KEY, pix_key
+      merchant_gui         = emv(ID_MERCHANT_ACCOUNT_INFORMATION_GUI, 'BR.GOV.BCB.PIX')
+      merchant_pix_key     = emv(ID_MERCHANT_ACCOUNT_INFORMATION_KEY, pix_key)
       merchant_description = emv(ID_MERCHANT_ACCOUNT_INFORMATION_DESCRIPTION, description) if description
-
-      emv ID_MERCHANT_ACCOUNT_INFORMATION, "#{merchant_gui}#{merchant_pix_key}#{merchant_description}"
+      emv(ID_MERCHANT_ACCOUNT_INFORMATION, "#{merchant_gui}#{merchant_pix_key}#{merchant_description}")
     end
 
     def emv_additional_data
       txid = emv(ID_ADDITIONAL_DATA_FIELD_TEMPLATE_TXID, transaction_id || '***')
-      emv ID_ADDITIONAL_DATA_FIELD_TEMPLATE, txid
+      emv(ID_ADDITIONAL_DATA_FIELD_TEMPLATE, txid)
     end
 
-    def crc16(t)
-      extended_payload = "#{t}#{ID_CRC16}04"
+    def crc16(text)
+      extended_payload = "#{text}#{ID_CRC16}04"
       extended_payload_length = extended_payload.length
       polynomial = 0x1021
       result = 0xFFFF
 
-      if extended_payload_length > 0
+      if extended_payload_length.positive?
         offset = 0
 
         while offset < extended_payload_length
-          result = result ^ (extended_payload[offset].bytes[0] << 8)
-
+          result ^= extended_payload[offset].bytes[0] << 8
           bitwise = 0
 
           while bitwise < 8
-            result = result << 1
-
-            if result & 0x10000 != 0
-              result = result ^ polynomial
-            end
-
-            result = result & 0xFFFF
-
+            result <<= 1
+            result ^= polynomial if result & 0x10000 != 0
+            result &= 0xFFFF
             bitwise += 1
           end
 
