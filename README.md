@@ -7,6 +7,7 @@
 [![Gem](https://img.shields.io/gem/dt/qrcode_pix_ruby.svg)]()
 [![license](https://img.shields.io/github/license/pedrofurtado/qrcode_pix_ruby.svg)]()
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/pedrofurtado/qrcode_pix_ruby)
+[![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
 
 Ruby gem for Qrcode generation of Pix (Pagamento Instantâneo Brasileiro - Banco Central do Brasil).
 
@@ -83,8 +84,8 @@ git clone https://github.com/pedrofurtado/qrcode_pix_ruby
 cd qrcode_pix_ruby/
 docker build -t qrcode_pix_ruby_specs .
 
-# Then, run this command how many times you want, 
-# after editing local files, and so on, to get 
+# Then, run this command how many times you want,
+# after editing local files, and so on, to get
 # feedback from test suite of gem.
 docker run -v $(pwd):/app/ -it qrcode_pix_ruby_specs
 ```
