@@ -31,7 +31,7 @@ def generate_html_with(env)
       <title>QRCode Pix Ruby - Demo App</title>
     </head>
     <body>
-      <h1>QRCode Pix Ruby - Demo App ... #{qrcode_data.params.inspect}</h1>
+      <h1>QRCode Pix Ruby - Demo App ... #{qrcode_data.inspect}</h1>
       <br>
       <form action='https://qrcode-pix-ruby.herokuapp.com' method='post'>
         <input type='text' name='pix_key' placeholder='Chave do PIX'>
