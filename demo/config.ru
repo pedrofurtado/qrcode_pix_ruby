@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-run lambda do |env|
+run lambda { |env|
   puts env.inspect
 
   [
@@ -10,4 +10,4 @@ run lambda do |env|
     },
     StringIO.new('Hello World!')
   ]
-end
+}
