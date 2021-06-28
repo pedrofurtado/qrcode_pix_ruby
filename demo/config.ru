@@ -78,11 +78,11 @@ def generate_html_with(env)
                   <input type='text' class='form-control' id='merchant_city' value='#{qrcode_data["merchant_city"]}' name='merchant_city'>
                 </div>
                 <div class='mb-3'>
-                  <label for='transaction_id'>Transaction ID</label>
+                  <label for='transaction_id'>Transaction ID (only numbers/characters without whitespaces)</label>
                   <input type='text' class='form-control' id='transaction_id' value='#{qrcode_data["transaction_id"]}' name='transaction_id'>
                 </div>
                 <div class='mb-3'>
-                  <label for='amount'>Amount</label>
+                  <label for='amount'>Amount (examples: 1.00, 0.75, 7500.00, 12400.50)</label>
                   <input type='text' class='form-control' id='amount' value='#{qrcode_data["amount"]}' name='amount'>
                 </div>
                 <div class='mb-3'>
@@ -98,7 +98,7 @@ def generate_html_with(env)
                   </select>
                 </div>
                 <div class='mb-3'>
-                  <label for='postal_code'>Postal code</label>
+                  <label for='postal_code'>Postal code (only numbers)</label>
                   <input type='text' class='form-control' id='postal_code' value='#{qrcode_data["postal_code"]}' name='postal_code'>
                 </div>
                 <div class='mb-3'>
