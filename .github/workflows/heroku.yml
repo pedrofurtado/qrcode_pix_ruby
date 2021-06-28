@@ -1,6 +1,8 @@
 name: Publish to Heroku
 
-on: [push]
+on:
+  push:
+    branches: [master]
 
 jobs:
   deploy:
