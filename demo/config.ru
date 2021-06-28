@@ -2,7 +2,7 @@
 
 run lambda do |env|
   puts env.inspect
-  
+
   [
     200,
     {
