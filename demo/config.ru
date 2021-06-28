@@ -2,8 +2,8 @@
 
 require 'qrcode_pix_ruby'
 
-def generate_html_with(post_data)
-  puts post_data.inspect
+def generate_html_with(env)
+  post_data = Rack::Request.new(env)
 
   StringIO.new <<-HTML
   <!DOCTYPE html>
@@ -12,7 +12,7 @@ def generate_html_with(post_data)
       <title>QRCode Pix Ruby - Demo App</title>
     </head>
     <body>
-      <h1>QRCode Pix Ruby - Demo App 4 ...</h1>
+      <h1>QRCode Pix Ruby - Demo App 4 ... #{post_data.params.inspect}</h1>
     </body>
   </html>
   HTML
