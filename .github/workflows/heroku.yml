@@ -8,6 +8,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Install Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0
+
+      - name: Install dependencies
+        run: |
+          cd demo/
+          bundle update qrcode_pix_ruby
+          cd ../
+
       - name: Define Heroku credentials
         run: |
           cat > ~/.netrc <<EOF
