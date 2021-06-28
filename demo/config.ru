@@ -21,8 +21,10 @@ def generate_html_with(env)
     pix.repeatable     = qrcode_data['repeatable']     unless qrcode_data['repeatable'].nil?
 
     payload = <<-HTML
-      <input class='form-control' id='payload' value='#{pix.payload}'>
-      <button class='btn btn-success btn-clipboard' data-clipboard-target='#payload'>Copy</button>
+      <div class='input-group mb-3'>
+        <input class='form-control' id='payload' value='#{pix.payload}'>
+        <button class='btn btn-outline-success btn-clipboard' data-clipboard-target='#payload' data-bs-toggle='tooltip' data-bs-placement='top' title='Copied!' data-trigger='click'>Copy</button>
+      </div>
     HTML
 
     data_uri = "<img src='#{pix.base64}'>"
@@ -35,6 +37,7 @@ def generate_html_with(env)
         <meta charset='utf-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+        <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js'></script>
         <script src='https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js'></script>
         <title>QRCode Pix Ruby - Demo App</title>
       </head>
@@ -115,6 +118,10 @@ def generate_html_with(env)
         </div>
         <script>
           new ClipboardJS('.btn-clipboard');
+
+          Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]')).forEach(function (tooltipTriggerEl) {
+            new bootstrap.Tooltip(tooltipTriggerEl);
+          });
         </script>
       </body>
     </html>
