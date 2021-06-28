@@ -1,6 +1,6 @@
 name: Publish to Heroku
 
-on: [workflow_dispatch]
+on: [push, workflow_dispatch]
 
 jobs:
   publish-to-heroku:
