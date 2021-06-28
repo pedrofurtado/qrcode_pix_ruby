@@ -21,10 +21,8 @@ def generate_html_with(env)
     pix.repeatable     = qrcode_data['repeatable']     unless qrcode_data['repeatable'].nil?
 
     payload = <<-HTML
-      <input id='payload' value='#{pix.payload}'>
-      <button class='btn' data-clipboard-target='#payload'>
-        <img src='asd.jpg'>
-      </button>
+      <input class='form-control' id='payload' value='#{pix.payload}'>
+      <button class='btn btn-success btn-clipboard' data-clipboard-target='#payload'>Copy</button>
     HTML
 
     data_uri = "<img src='#{pix.base64}'>"
@@ -110,10 +108,14 @@ def generate_html_with(env)
               <br>
               #{payload}
               <br>
+              <br>
               #{data_uri}
             </div>
           </div>
         </div>
+        <script>
+          new ClipboardJS('.btn-clipboard');
+        </script>
       </body>
     </html>
   HTML
