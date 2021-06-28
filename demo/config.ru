@@ -13,6 +13,10 @@ def generate_html_with(env)
     </head>
     <body>
       <h1>QRCode Pix Ruby - Demo App 4 ... #{post_data.params.inspect}</h1>
+      <form action='https://qrcode-pix-ruby.herokuapp.com' method='post'>
+        <input type='text' name='abc'>
+        <input type='submit' value='Gerar QRCode'>
+      </form>
     </body>
   </html>
   HTML
