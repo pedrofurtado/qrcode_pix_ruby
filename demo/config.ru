@@ -23,7 +23,7 @@ def generate_html_with(env)
     payload = <<-HTML
       <div class='input-group mb-3'>
         <input class='form-control' id='payload' value='#{pix.payload}'>
-        <button class='btn btn-outline-success btn-clipboard' data-clipboard-target='#payload' data-bs-toggle='tooltip' data-bs-placement='top' title='Copied!' data-bs-trigger='click'>Copy</button>
+        <button class='btn btn-outline-success btn-clipboard' data-clipboard-target='#payload' data-bs-toggle='tooltip' data-bs-placement='top' title='Copied!' data-bs-trigger='click' data-bs-delay='300'>Copy</button>
       </div>
     HTML
 
