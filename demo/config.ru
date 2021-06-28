@@ -22,7 +22,9 @@ def generate_html_with(env)
 
     payload = <<-HTML
       <input id='payload' value='#{pix.payload}'>
-      <button class='btn' data-clipboard-target='#payload'>Copy</button>
+      <button class='btn' data-clipboard-target='#payload'>
+        <img src='asd.jpg'>
+      </button>
     HTML
 
     data_uri = "<img src='#{pix.base64}'>"
