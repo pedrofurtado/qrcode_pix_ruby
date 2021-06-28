@@ -3,6 +3,8 @@
 require 'qrcode_pix_ruby'
 
 def generate_html_with(post_data)
+  puts post_data.inspect
+  
   <<-HTML
   <!DOCTYPE html>
   <html>
@@ -10,7 +12,7 @@ def generate_html_with(post_data)
       <title>QRCode Pix Ruby - Demo App</title>
     </head>
     <body>
-      <h1>QRCode Pix Ruby - Demo App 2 ...</h1>
+      <h1>QRCode Pix Ruby - Demo App 3 ...</h1>
     </body>
   </html>
   HTML
