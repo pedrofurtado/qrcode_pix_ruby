@@ -4,7 +4,7 @@ require 'qrcode_pix_ruby'
 
 def generate_html_with(post_data)
   puts post_data.inspect
-  
+
   <<-HTML
   <!DOCTYPE html>
   <html>
