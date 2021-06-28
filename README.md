@@ -90,6 +90,12 @@ docker build -t qrcode_pix_ruby_specs .
 docker run -v $(pwd):/app/ -it qrcode_pix_ruby_specs
 ```
 
+## Demo
+
+It's provided a simple demo app, in Heroku, that uses the gem always in latest stable. You can check and test your QRCodes here: https://qrcode-pix-ruby.herokuapp.com
+
+🚨 Important note: The first page load can be slow, because of Heroky free tier. But don't worry, the demo works well 🤓
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/pedrofurtado/qrcode_pix_ruby. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/pedrofurtado/qrcode_pix_ruby/blob/master/CODE_OF_CONDUCT.md).
