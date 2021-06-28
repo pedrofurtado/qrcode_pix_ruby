@@ -36,8 +36,18 @@ def generate_html_with(env)
       <body>
         <div class='container' style='margin-top: 50px;'>
           <div class='row'>
+            <div class='col-md-12'>
+              <h1>QRCode Pix Ruby - Demo App</h1>
+              <br>
+              <img src="https://github.com/pedrofurtado/qrcode_pix_ruby/blob/master/pix_logo.png?raw=true" height="100px" />
+              <br>
+              For more details check the repo: https://github.com/pedrofurtado/qrcode_pix_ruby
+            </div>
+          </div>
+          <div class='row'>
             <div class='col-sm-6'>
               <strong>QRCode informations</strong>
+              <br>
               <br>
               <form action='https://qrcode-pix-ruby.herokuapp.com' method='post'>
                 <div class='mb-3'>
@@ -87,6 +97,7 @@ def generate_html_with(env)
             </div>
             <div class='col-sm-6'>
               <strong>Preview</strong>
+              <br>
               <br>
               #{payload}
               <br>
