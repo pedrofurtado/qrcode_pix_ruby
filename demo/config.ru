@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'qrcode_pix_ruby'
+
 run lambda { |env|
   puts env.inspect
 
@@ -8,6 +10,6 @@ run lambda { |env|
     {
       'Content-Type' => 'text/plain'
     },
-    StringIO.new('Hello World!')
+    StringIO.new('Hello World 2!')
   ]
 }
