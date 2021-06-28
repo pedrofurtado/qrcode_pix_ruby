@@ -63,47 +63,47 @@ def generate_html_with(env)
               <form action='https://qrcode-pix-ruby.herokuapp.com' method='post'>
                 <div class='mb-3'>
                   <label for='pix_key'>PIX key (email, phone, CPF, and random keys)</label>
-                  <input type='text' class='form-control' id='pix_key' value='#{qrcode_data["pix_key"]}' name='pix_key'>
+                  <input required type='text' class='form-control' id='pix_key' value='#{qrcode_data["pix_key"]}' name='pix_key'>
                 </div>
                 <div class='mb-3'>
                   <label for='description'>Description</label>
-                  <input type='text' class='form-control' id='description' value='#{qrcode_data["description"]}' name='description'>
+                  <input required type='text' class='form-control' id='description' value='#{qrcode_data["description"]}' name='description'>
                 </div>
                 <div class='mb-3'>
                   <label for='merchant_name'>Merchant name</label>
-                  <input type='text' class='form-control' id='merchant_name' value='#{qrcode_data["merchant_name"]}' name='merchant_name'>
+                  <input required type='text' class='form-control' id='merchant_name' value='#{qrcode_data["merchant_name"]}' name='merchant_name'>
                 </div>
                 <div class='mb-3'>
                   <label for='merchant_city'>Merchant city</label>
-                  <input type='text' class='form-control' id='merchant_city' value='#{qrcode_data["merchant_city"]}' name='merchant_city'>
+                  <input required type='text' class='form-control' id='merchant_city' value='#{qrcode_data["merchant_city"]}' name='merchant_city'>
                 </div>
                 <div class='mb-3'>
                   <label for='transaction_id'>Transaction ID (only numbers/characters without whitespaces)</label>
-                  <input type='text' class='form-control' id='transaction_id' value='#{qrcode_data["transaction_id"]}' name='transaction_id'>
+                  <input required type='text' class='form-control' id='transaction_id' value='#{qrcode_data["transaction_id"]}' name='transaction_id'>
                 </div>
                 <div class='mb-3'>
                   <label for='amount'>Amount (examples: 1.00, 0.75, 7500.00, 12400.50)</label>
-                  <input type='text' class='form-control' id='amount' value='#{qrcode_data["amount"]}' name='amount'>
+                  <input required type='text' class='form-control' id='amount' value='#{qrcode_data["amount"]}' name='amount'>
                 </div>
                 <div class='mb-3'>
                   <label for='currency'>Currency</label>
-                  <select id='currency' name='currency' class='form-select'>
+                  <select required id='currency' name='currency' class='form-select'>
                     <option value='986' selected>Brazilian Real (R$)</option>
                   </select>
                 </div>
                 <div class='mb-3'>
                   <label for='country_code'>Country</label>
-                  <select id='country_code' name='country_code' class='form-select'>
+                  <select required id='country_code' name='country_code' class='form-select'>
                     <option value='BR' selected>Brazil</option>
                   </select>
                 </div>
                 <div class='mb-3'>
                   <label for='postal_code'>Postal code (only numbers)</label>
-                  <input type='text' class='form-control' id='postal_code' value='#{qrcode_data["postal_code"]}' name='postal_code'>
+                  <input required type='text' class='form-control' id='postal_code' value='#{qrcode_data["postal_code"]}' name='postal_code'>
                 </div>
                 <div class='mb-3'>
                   <label for='repeatable'>Repeatable?</label>
-                  <select id='repeatable' name='repeatable' class='form-select'>
+                  <select required id='repeatable' name='repeatable' class='form-select'>
                     <option selected></option>
                     <option value='t'>Yes</option>
                     <option value='f'>No</option>
