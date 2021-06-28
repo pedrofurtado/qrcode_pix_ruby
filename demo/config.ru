@@ -25,43 +25,53 @@ def generate_html_with(env)
   end
 
   StringIO.new <<-HTML
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <title>QRCode Pix Ruby - Demo App</title>
-    </head>
-    <body>
-      <h1>QRCode Pix Ruby - Demo App ... #{qrcode_data.inspect}</h1>
-      <br>
-      <form action='https://qrcode-pix-ruby.herokuapp.com' method='post'>
-        <input type='text' name='pix_key' placeholder='Chave do PIX'>
-        <br>
-        <input type='text' name='description'    placeholder='Descrição do pagamento'>
-        <br>
-        <input type='text' name='merchant_name'  placeholder='Nome do titular'>
-        <br>
-        <input type='text' name='merchant_city'  placeholder='Cidade do titular'>
-        <br>
-        <input type='text' name='transaction_id' placeholder='ID da transação'>
-        <br>
-        <input type='text' name='amount'         placeholder='Valor'>
-        <br>
-        <input type='text' name='currency'       placeholder='Moeda'>
-        <br>
-        <input type='text' name='country_code'   placeholder='País'>
-        <br>
-        <input type='text' name='postal_code'    placeholder='Código Postal'>
-        <br>
-        <input type='text' name='repeatable'     placeholder='Repetível?'>
-        <br>
-        <input type='submit' value='Gerar QRCode'>
-      </form>
-      <br>
-      #{payload}
-      <br>
-      #{data_uri}
-    </body>
-  </html>
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+        <title>QRCode Pix Ruby - Demo App</title>
+      </head>
+      <body>
+        <div class='container'>
+          <div class='row'>
+            <div class='col-xl-6'>
+              <strong>Data</strong>
+              <form action='https://qrcode-pix-ruby.herokuapp.com' method='post'>
+                <input type='text' name='pix_key' placeholder='Chave do PIX'>
+                <br>
+                <input type='text' name='description'    placeholder='Descrição do pagamento'>
+                <br>
+                <input type='text' name='merchant_name'  placeholder='Nome do titular'>
+                <br>
+                <input type='text' name='merchant_city'  placeholder='Cidade do titular'>
+                <br>
+                <input type='text' name='transaction_id' placeholder='ID da transação'>
+                <br>
+                <input type='text' name='amount'         placeholder='Valor'>
+                <br>
+                <input type='text' name='currency'       placeholder='Moeda'>
+                <br>
+                <input type='text' name='country_code'   placeholder='País'>
+                <br>
+                <input type='text' name='postal_code'    placeholder='Código Postal'>
+                <br>
+                <input type='text' name='repeatable'     placeholder='Repetível?'>
+                <br>
+                <input type='submit' value='Gerar QRCode'>
+              </form>
+            </div>
+            <div class='col-xl-6'>
+              <strong>Preview</strong>
+              #{payload}
+              <br>
+              #{data_uri}
+            </div>
+          </div>
+        </div>
+      </body>
+    </html>
   HTML
 end
 
