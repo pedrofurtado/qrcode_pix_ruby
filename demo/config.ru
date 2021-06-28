@@ -10,7 +10,7 @@ def generate_html_with(post_data)
       <title>QRCode Pix Ruby - Demo App</title>
     </head>
     <body>
-      <h1>QRCode Pix Ruby - Demo App ...</h1>
+      <h1>QRCode Pix Ruby - Demo App 2 ...</h1>
     </body>
   </html>
   HTML
@@ -22,6 +22,6 @@ run lambda { |env|
     {
       'Content-Type' => 'text/plain'
     },
-    StringIO.new(generate_html_with(env))
+    generate_html_with(env)
   ]
 }
