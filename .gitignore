@@ -2,3 +2,4 @@
 *.lock
 *.gem
 coverage/
+*.log
