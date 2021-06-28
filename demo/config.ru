@@ -9,16 +9,16 @@ def generate_html_with(env)
   pix = QrcodePixRuby::Payload.new
 
   unless qrcode_data.empty?
-    pix.pix_key        = qrcode_data['pix_key']        unless qrcode_data['pix_key'].nil?
-    pix.description    = qrcode_data['description']    unless qrcode_data['description'].nil?
-    pix.merchant_name  = qrcode_data['merchant_name']  unless qrcode_data['merchant_name'].nil?
-    pix.merchant_city  = qrcode_data['merchant_city']  unless qrcode_data['merchant_city'].nil?
-    pix.transaction_id = qrcode_data['transaction_id'] unless qrcode_data['transaction_id'].nil?
-    pix.amount         = qrcode_data['amount']         unless qrcode_data['amount'].nil?
-    pix.currency       = qrcode_data['currency']       unless qrcode_data['currency'].nil?
-    pix.country_code   = qrcode_data['country_code']   unless qrcode_data['country_code'].nil?
-    pix.postal_code    = qrcode_data['postal_code']    unless qrcode_data['postal_code'].nil?
-    pix.repeatable     = qrcode_data['repeatable']     unless qrcode_data['repeatable'].nil?
+    pix.pix_key        = qrcode_data['pix_key']           unless qrcode_data['pix_key'].nil?
+    pix.description    = qrcode_data['description']       unless qrcode_data['description'].nil?
+    pix.merchant_name  = qrcode_data['merchant_name']     unless qrcode_data['merchant_name'].nil?
+    pix.merchant_city  = qrcode_data['merchant_city']     unless qrcode_data['merchant_city'].nil?
+    pix.transaction_id = qrcode_data['transaction_id']    unless qrcode_data['transaction_id'].nil?
+    pix.amount         = qrcode_data['amount']            unless qrcode_data['amount'].nil?
+    pix.currency       = qrcode_data['currency']          unless qrcode_data['currency'].nil?
+    pix.country_code   = qrcode_data['country_code']      unless qrcode_data['country_code'].nil?
+    pix.postal_code    = qrcode_data['postal_code']       unless qrcode_data['postal_code'].nil?
+    pix.repeatable     = qrcode_data['repeatable'] == 't' unless qrcode_data['repeatable'].nil?
 
     payload = <<-HTML
       <label for='payload'>Payload</label>
@@ -105,12 +105,12 @@ def generate_html_with(env)
                   <label for='repeatable'>Repeatable?</label>
                   <select id='repeatable' name='repeatable' class='form-select'>
                     <option selected></option>
-                    <option value='t'>Sim</option>
-                    <option value='f'>Sim</option>
+                    <option value='t'>Yes</option>
+                    <option value='f'>No</option>
                   </select>
                 </div>
                 <div class='d-grid gap-2'>
-                  <button type='submit' class='btn btn-lg btn-primary'>Generate QRCode</button>
+                  <button type='submit' class='btn btn-lg btn-primary'>Generate</button>
                 </div>
               </form>
             </div>
