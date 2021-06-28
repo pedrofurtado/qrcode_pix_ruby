@@ -3,6 +3,7 @@ AllCops:
   SuggestExtensions: false
   Exclude:
     - spec/*
+    - demo/*
 
 Layout/LineLength:
   Max: 120
