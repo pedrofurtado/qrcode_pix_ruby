@@ -31,28 +31,28 @@ def generate_html_with(env)
       <title>QRCode Pix Ruby - Demo App</title>
     </head>
     <body>
-      <h1>QRCode Pix Ruby - Demo App ... #{post_data.params.inspect}</h1>
+      <h1>QRCode Pix Ruby - Demo App ... #{qrcode_data.params.inspect}</h1>
       <br>
       <form action='https://qrcode-pix-ruby.herokuapp.com' method='post'>
         <input type='text' name='pix_key' placeholder='Chave do PIX'>
         <br>
-        <input type='text' name='description' placeholder='Descrição do pagamento'>
+        <input type='text' name='description'    placeholder='Descrição do pagamento'>
         <br>
-        <input type='text' name='merchant_name' placeholder='Nome do titular'>
+        <input type='text' name='merchant_name'  placeholder='Nome do titular'>
         <br>
-        <input type='text' name='merchant_city' placeholder='Cidade do titular'>
+        <input type='text' name='merchant_city'  placeholder='Cidade do titular'>
         <br>
         <input type='text' name='transaction_id' placeholder='ID da transação'>
         <br>
-        <input type='text' name='amount' placeholder='Valor'>
+        <input type='text' name='amount'         placeholder='Valor'>
         <br>
-        <input type='text' name='currency' placeholder='Moeda'>
+        <input type='text' name='currency'       placeholder='Moeda'>
         <br>
-        <input type='text' name='country_code' placeholder='País'>
+        <input type='text' name='country_code'   placeholder='País'>
         <br>
-        <input type='text' name='postal_code' placeholder='Código Postal'>
+        <input type='text' name='postal_code'    placeholder='Código Postal'>
         <br>
-        <input type='text' name='repeatable' placeholder='Repetível?'>
+        <input type='text' name='repeatable'     placeholder='Repetível?'>
         <br>
         <input type='submit' value='Gerar QRCode'>
       </form>
