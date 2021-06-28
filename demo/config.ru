@@ -39,26 +39,46 @@ def generate_html_with(env)
             <div class='col-sm-6'>
               <strong>Data</strong>
               <form action='https://qrcode-pix-ruby.herokuapp.com' method='post'>
-                <input type='text' name='pix_key' placeholder='Chave do PIX'>
-                <br>
-                <input type='text' name='description'    placeholder='Descrição do pagamento'>
-                <br>
-                <input type='text' name='merchant_name'  placeholder='Nome do titular'>
-                <br>
-                <input type='text' name='merchant_city'  placeholder='Cidade do titular'>
-                <br>
-                <input type='text' name='transaction_id' placeholder='ID da transação'>
-                <br>
-                <input type='text' name='amount'         placeholder='Valor'>
-                <br>
-                <input type='text' name='currency'       placeholder='Moeda'>
-                <br>
-                <input type='text' name='country_code'   placeholder='País'>
-                <br>
-                <input type='text' name='postal_code'    placeholder='Código Postal'>
-                <br>
-                <input type='text' name='repeatable'     placeholder='Repetível?'>
-                <br>
+                <div class='form-floating mb-3'>
+                  <input type='text' class='form-control' id='float-label-of-pix_key' name='pix_key' placeholder='Chave do PIX'>
+                  <label for='float-label-of-pix_key'></label>
+                </div>
+                <div class='form-floating mb-3'>
+                  <input type='text' class='form-control' id='float-label-of-description' name='description' placeholder='Descrição do pagamento'>
+                  <label for='float-label-of-description'></label>
+                </div>
+                <div class='form-floating mb-3'>
+                  <input type='text' class='form-control' id='float-label-of-merchant_name' name='merchant_name' placeholder='Nome do titular'>
+                  <label for='float-label-of-merchant_name'></label>
+                </div>
+                <div class='form-floating mb-3'>
+                  <input type='text' class='form-control' id='float-label-of-merchant_city' name='merchant_city' placeholder='Cidade do titular'>
+                  <label for='float-label-of-merchant_city'></label>
+                </div>
+                <div class='form-floating mb-3'>
+                  <input type='text' class='form-control' id='float-label-of-transaction_id' name='transaction_id' placeholder='ID da transação'>
+                  <label for='float-label-of-transaction_id'></label>
+                </div>
+                <div class='form-floating mb-3'>
+                  <input type='text' class='form-control' id='float-label-of-amount' name='amount' placeholder='Valor'>
+                  <label for='float-label-of-amount'></label>
+                </div>
+                <div class='form-floating mb-3'>
+                  <input type='text' class='form-control' id='float-label-of-currency' name='currency' placeholder='Moeda'>
+                  <label for='float-label-of-currency'></label>
+                </div>
+                <div class='form-floating mb-3'>
+                  <input type='text' class='form-control' id='float-label-of-country_code' name='country_code' placeholder='País'>
+                  <label for='float-label-of-country_code'></label>
+                </div>
+                <div class='form-floating mb-3'>
+                  <input type='text' class='form-control' id='float-label-of-postal_code' name='postal_code' placeholder='Código Postal'>
+                  <label for='float-label-of-postal_code'></label>
+                </div>
+                <div class='form-floating mb-3'>
+                  <input type='text' class='form-control' id='float-label-of-repeatable' name='repeatable' placeholder='Repetível?'>
+                  <label for='float-label-of-repeatable'></label>
+                </div>
                 <input type='submit' value='Gerar QRCode'>
               </form>
             </div>
