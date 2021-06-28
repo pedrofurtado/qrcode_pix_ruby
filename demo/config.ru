@@ -5,14 +5,14 @@ require 'qrcode_pix_ruby'
 def generate_html_with(post_data)
   puts post_data.inspect
 
-  <<-HTML
+  StringIO.new <<-HTML
   <!DOCTYPE html>
   <html>
     <head>
       <title>QRCode Pix Ruby - Demo App</title>
     </head>
     <body>
-      <h1>QRCode Pix Ruby - Demo App 3 ...</h1>
+      <h1>QRCode Pix Ruby - Demo App 4 ...</h1>
     </body>
   </html>
   HTML
