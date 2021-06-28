@@ -36,7 +36,7 @@ def generate_html_with(env)
       <body>
         <div class='container'>
           <div class='row'>
-            <div class='col-xl-6'>
+            <div class='col-sm-6'>
               <strong>Data</strong>
               <form action='https://qrcode-pix-ruby.herokuapp.com' method='post'>
                 <input type='text' name='pix_key' placeholder='Chave do PIX'>
@@ -62,7 +62,7 @@ def generate_html_with(env)
                 <input type='submit' value='Gerar QRCode'>
               </form>
             </div>
-            <div class='col-xl-6'>
+            <div class='col-sm-6'>
               <strong>Preview</strong>
               #{payload}
               <br>
