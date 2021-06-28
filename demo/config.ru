@@ -28,7 +28,7 @@ def generate_html_with(env)
       </div>
     HTML
 
-    data_uri = "<img src='#{pix.base64}'>"
+    data_uri = "<img style='max-width: 100%;' src='#{pix.base64}'>"
   end
 
   StringIO.new <<-HTML
