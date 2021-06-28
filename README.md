@@ -96,7 +96,7 @@ It's provided a simple demo app, in Heroku, that uses the gem always in latest s
 
 https://qrcode-pix-ruby.herokuapp.com
 
-🚨 Important note: The first page load can be slow, because of Heroky free tier. But don't worry, the demo works well 🤓
+🚨 Important note: The first page load can be slow, because of Heroku free tier. But don't worry, the demo works well 🤓
 
 ## Contributing
 
