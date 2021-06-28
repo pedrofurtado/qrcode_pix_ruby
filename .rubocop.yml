@@ -26,3 +26,6 @@ Metrics/BlockNesting:
 
 Style/IfUnlessModifier:
   Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
