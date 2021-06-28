@@ -20,7 +20,7 @@ def generate_html_with(env)
     pix.postal_code    = qrcode_data['postal_code']    unless qrcode_data['postal_code'].nil?
     pix.repeatable     = qrcode_data['repeatable']     unless qrcode_data['repeatable'].nil?
 
-    payload = "<p>#{pix.payload}</p>"
+    payload = "<p style='word-break: break-all;'>#{pix.payload}</p>"
     data_uri = "<img src='#{pix.base64}'>"
   end
 
@@ -37,47 +37,48 @@ def generate_html_with(env)
         <div class='container' style='margin-top: 50px;'>
           <div class='row'>
             <div class='col-sm-6'>
-              <strong>Data</strong>
+              <strong>QRCode informations</strong>
+              <br>
               <form action='https://qrcode-pix-ruby.herokuapp.com' method='post'>
                 <div class='mb-3'>
                   <label for='pix_key'>Chave do PIX</label>
-                  <input type='text' class='form-control' id='pix_key' name='pix_key' placeholder='Chave do PIX'>
+                  <input type='text' class='form-control' id='pix_key' value='#{qrcode_data["pix_key"]}' name='pix_key'>
                 </div>
                 <div class='mb-3'>
                   <label for='description'>Descrição do pagamento</label>
-                  <input type='text' class='form-control' id='description' name='description' placeholder='Descrição do pagamento'>
+                  <input type='text' class='form-control' id='description' value='#{qrcode_data["description"]}' name='description'>
                 </div>
                 <div class='mb-3'>
                   <label for='merchant_name'>Nome do titular</label>
-                  <input type='text' class='form-control' id='merchant_name' name='merchant_name' placeholder='Nome do titular'>
+                  <input type='text' class='form-control' id='merchant_name' value='#{qrcode_data["merchant_name"]}' name='merchant_name'>
                 </div>
                 <div class='mb-3'>
                   <label for='merchant_city'>Cidade do titular</label>
-                  <input type='text' class='form-control' id='merchant_city' name='merchant_city' placeholder='Cidade do titular'>
+                  <input type='text' class='form-control' id='merchant_city' value='#{qrcode_data["merchant_city"]}' name='merchant_city'>
                 </div>
                 <div class='mb-3'>
                   <label for='transaction_id'>ID da transação</label>
-                  <input type='text' class='form-control' id='transaction_id' name='transaction_id' placeholder='ID da transação'>
+                  <input type='text' class='form-control' id='transaction_id' value='#{qrcode_data["transaction_id"]}' name='transaction_id'>
                 </div>
                 <div class='mb-3'>
                   <label for='amount'>Valor</label>
-                  <input type='text' class='form-control' id='amount' name='amount' placeholder='Valor'>
+                  <input type='text' class='form-control' id='amount' value='#{qrcode_data["amount"]}' name='amount'>
                 </div>
                 <div class='mb-3'>
                   <label for='currency'>Moeda</label>
-                  <input type='text' class='form-control' id='currency' name='currency' placeholder='Moeda'>
+                  <input type='text' class='form-control' id='currency' value='#{qrcode_data["currency"]}' name='currency'>
                 </div>
                 <div class='mb-3'>
                   <label for='country_code'>País</label>
-                  <input type='text' class='form-control' id='country_code' name='country_code' placeholder='País'>
+                  <input type='text' class='form-control' id='country_code' value='#{qrcode_data["country_code"]}' name='country_code'>
                 </div>
                 <div class='mb-3'>
                   <label for='postal_code'>Código Postal</label>
-                  <input type='text' class='form-control' id='postal_code' name='postal_code' placeholder='Código Postal'>
+                  <input type='text' class='form-control' id='postal_code' value='#{qrcode_data["postal_code"]}' name='postal_code'>
                 </div>
                 <div class='mb-3'>
                   <label for='repeatable'>Repetível?</label>
-                  <input type='text' class='form-control' id='repeatable' name='repeatable' placeholder='Repetível?'>
+                  <input type='text' class='form-control' id='repeatable' value='#{qrcode_data["repeatable"]}' name='repeatable'>
                 </div>
                 <div class='d-grid gap-2'>
                   <button type='submit' class='btn btn-lg btn-primary'>Generate QRCode</button>
@@ -86,6 +87,7 @@ def generate_html_with(env)
             </div>
             <div class='col-sm-6'>
               <strong>Preview</strong>
+              <br>
               #{payload}
               <br>
               #{data_uri}
