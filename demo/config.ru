@@ -79,7 +79,7 @@ def generate_html_with(env)
                   <input type='text' class='form-control' id='float-label-of-repeatable' name='repeatable' placeholder='Repetível?'>
                   <label for='float-label-of-repeatable'></label>
                 </div>
-                <input type='submit' value='Gerar QRCode'>
+                <button type='submit' class='btn btn-primary'>Generate QRCode</button>
               </form>
             </div>
             <div class='col-sm-6'>
