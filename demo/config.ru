@@ -48,7 +48,7 @@ def generate_html_with(env)
             <div class='col-md-12'>
               <h1 class='text-center'>QRCode Pix Ruby - Demo App</h1>
               <br>
-              <img style='display: block; margin: 0 auto;' src="https://github.com/pedrofurtado/qrcode_pix_ruby/blob/master/pix_logo.png?raw=true" height="100px" />
+              <img style='display: block; margin: 0 auto; max-width: 100%;' src="https://github.com/pedrofurtado/qrcode_pix_ruby/blob/master/pix_logo.png?raw=true" height="100px" />
               <br>
               <p style='word-break: break-all;' class='text-center'>For more details check the official repo: <a href="https://github.com/pedrofurtado/qrcode_pix_ruby">https://github.com/pedrofurtado/qrcode_pix_ruby</a></p>
               <br>
