@@ -22,7 +22,7 @@ run lambda { |env|
   [
     200,
     {
-      'Content-Type' => 'text/plain'
+      'Content-Type' => 'text/html'
     },
     generate_html_with(env)
   ]
