@@ -42,5 +42,7 @@ jobs:
 
       - name: Publish to Heroku
         run: |
+          git config user.name 'Pedro Furtado'
+          git config user.email 'pedro.felipe.azevedo.furtado@gmail.com'
           git commit --allow-empty
           git push heroku `git subtree split --prefix demo master`:master --force
