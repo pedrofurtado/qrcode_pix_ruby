@@ -41,4 +41,6 @@ jobs:
           HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
 
       - name: Publish to Heroku
-        run: git push heroku `git subtree split --prefix demo master`:master --force
+        run: |
+          git commit --allow-empty
+          git push heroku `git subtree split --prefix demo master`:master --force
