@@ -50,7 +50,7 @@ pix.repeatable     = false
 # QRCode copia-e-cola
 puts pix.payload
 
-# QRCode estático
+# QRCode estático (para uso em imagens)
 puts pix.base64
 ```
 
