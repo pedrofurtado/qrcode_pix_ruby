@@ -72,7 +72,7 @@ module QrcodePixRuby
     end
 
     def emv_repeatable
-      emv(ID_POINT_OF_INITIATION_METHOD, repeatable ? '12' : '11')
+      emv(ID_POINT_OF_INITIATION_METHOD, repeatable ? '11' : '12')
     end
 
     def emv_merchant

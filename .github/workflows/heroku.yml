@@ -42,4 +42,3 @@ jobs:
 
       - name: Publish to Heroku
         run: git push heroku `git subtree split --prefix demo master`:master --force
-

@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.3.4] - 2021-06-28
+
+- Fix behavior of EMV field 'repeatable' (the logic was inversed)
+
 ## [0.3.3] - 2021-06-25
 
 - Rubocop setup
