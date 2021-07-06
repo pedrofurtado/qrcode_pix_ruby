@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-gem 'qrcode_pix_ruby'
+gem 'qrcode_pix_ruby', github: 'pedrofurtado/qrcode_pix_ruby', branch: 'master'
 gem 'rack'
