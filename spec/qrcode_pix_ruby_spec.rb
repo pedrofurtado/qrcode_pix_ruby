@@ -4,7 +4,7 @@ RSpec.describe QrcodePixRuby do
   before :each do
     @pix                = QrcodePixRuby::Payload.new
     @pix.pix_key        = 'pedro.felipe.azevedo.furtado@gmail.com'
-    @pix.merchant_name  = 'PEDRO FURTADO'
+    @pix.merchant_name  = 'PEDRO FURTADO (error)'
     @pix.merchant_city  = 'SAO PAULO'
   end
 
