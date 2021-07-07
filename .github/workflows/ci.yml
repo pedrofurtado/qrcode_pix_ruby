@@ -3,6 +3,17 @@ name: CI
 on: [push, pull_request]
 
 jobs:
+  dockerfile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build Dockerfile
+        run: docker build -t qrcode_pix_ruby_specs .
+
+      - name: Run tests inside Docker container
+        run: docker run -v $(pwd):/app/ -i qrcode_pix_ruby_specs
+          
   tests:
     runs-on: ubuntu-latest
     strategy:
