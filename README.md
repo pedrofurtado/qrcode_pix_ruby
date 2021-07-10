@@ -63,15 +63,12 @@ require 'qrcode_pix_ruby'
 
 pix = QrcodePixRuby::Payload.new
 
+pix                = QrcodePixRuby::Payload.new
 pix.url            = 'https://example.com'
-pix.description    = 'Pagamento do pedido 123456'
 pix.merchant_name  = 'Fulano de Tal'
 pix.merchant_city  = 'SAO PAULO'
-pix.transaction_id = 'TID12345'
 pix.amount         = '100.00'
-pix.currency       = '986'
-pix.country_code   = 'BR'
-pix.postal_code    = '01131010'
+pix.transaction_id = 'TID12345'
 pix.repeatable     = false
 
 # QRCode copia-e-cola
