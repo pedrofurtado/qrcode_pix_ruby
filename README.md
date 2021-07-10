@@ -103,6 +103,7 @@ puts pix.base64
 * https://gerencianet.com.br/blog/qr-code-estatico-qr-code-dinamico-no-pix
 * https://blog.juno.com.br/pix-qr-code-estatico-x-qr-code-dinamico
 * https://github.com/entria/awesome-pix
+* https://zxing.org/w/decode.jspx
 
 ## Execute tests/specs
 
