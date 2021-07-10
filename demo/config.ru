@@ -70,7 +70,7 @@ def generate_html_with(env)
                   </div>
                 </div>
                 <div class='mb-3'>
-                  <label for='pix_key'>Pix key</label>
+                  <label for='pix_key'>* Pix key</label>
                   <input type='text' class='form-control' id='pix_key' value='#{qrcode_data["pix_key"]}' name='pix_key'>
                   <div class='form-text'>
                     Formats of Pix keys:<br>
@@ -82,29 +82,29 @@ def generate_html_with(env)
                 </div>
                 <div class='mb-3'>    or</div>
                 <div class='mb-3'>
-                  <label for='url'>URL</label>
+                  <label for='url'>* URL</label>
                   <input type='url' pattern='https?:\/\/.+' class='form-control' id='url' value='#{qrcode_data["url"]}' name='url'>
                 </div>
                 <hr>
                 <div class='mb-3'>
                   <label for='description'>Description</label>
-                  <input required maxlength='10' type='text' class='form-control' id='description' value='#{qrcode_data["description"]}' name='description'>
+                  <input maxlength='10' type='text' class='form-control' id='description' value='#{qrcode_data["description"]}' name='description'>
                 </div>
                 <div class='mb-3'>
-                  <label for='merchant_name'>Merchant name</label>
+                  <label for='merchant_name'>* Merchant name</label>
                   <input required maxlength='10' type='text' class='form-control' id='merchant_name' value='#{qrcode_data["merchant_name"]}' name='merchant_name'>
                 </div>
                 <div class='mb-3'>
-                  <label for='merchant_city'>Merchant city</label>
+                  <label for='merchant_city'>* Merchant city</label>
                   <input required maxlength='10' type='text' class='form-control' id='merchant_city' value='#{qrcode_data["merchant_city"]}' name='merchant_city'>
                 </div>
                 <div class='mb-3'>
                   <label for='transaction_id'>Transaction ID</label>
-                  <input required maxlength='10' type='text' class='form-control' id='transaction_id' value='#{qrcode_data["transaction_id"]}' name='transaction_id'>
+                  <input maxlength='10' type='text' class='form-control' id='transaction_id' value='#{qrcode_data["transaction_id"]}' name='transaction_id'>
                 </div>
                 <div class='mb-3'>
                   <label for='amount'>Amount</label>
-                  <input required pattern='[0-9]+\.[0-9][0-9]' type='tel' class='form-control' id='amount' value='#{qrcode_data["amount"]}' name='amount'>
+                  <input type='number' step='0.01' class='form-control' id='amount' value='#{qrcode_data["amount"]}' name='amount'>
                 </div>
                 <div class='mb-3'>
                   <label for='currency'>Currency</label>
