@@ -4,9 +4,9 @@ require 'qrcode_pix_ruby'
 
 def generate_html_with(env)
   qrcode_data = Rack::Request.new(env).params
-  payload = ''
-  data_uri = ''
-  pix = QrcodePixRuby::Payload.new
+  payload     = ''
+  data_uri    = ''
+  pix         = QrcodePixRuby::Payload.new
 
   unless qrcode_data.empty?
     pix.pix_key        = qrcode_data['pix_key']           if !qrcode_data['pix_key'].nil?        && !qrcode_data['pix_key'].empty?
@@ -62,6 +62,9 @@ def generate_html_with(env)
               <br>
               <br>
               <form action='https://qrcode-pix-ruby.herokuapp.com' method='post'>
+                <div class='mb-3'>
+                  <div class='form-text'>For static PIX, please fill the 'Pix key' field. For dynamic PIX, fill the 'URL' field.</div>
+                </div>
                 <div class='row mb-3'>
                   <div class='col'>
                     <label for='pix_key'>Pix key</label>
@@ -76,6 +79,7 @@ def generate_html_with(env)
                       <input type='text' class='form-control' id='pix_key' value='#{qrcode_data["pix_key"]}' name='pix_key'>
                     </div>
                   </div>
+                  or
                   <div class='col'>
                     <label for='url'>URL</label>
                     <input type='url' pattern='https?:\/\/.+' class='form-control' id='url' value='#{qrcode_data["url"]}' name='url'>
