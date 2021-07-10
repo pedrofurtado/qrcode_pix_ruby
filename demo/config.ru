@@ -63,55 +63,74 @@ def generate_html_with(env)
               <br>
               <form action='https://qrcode-pix-ruby.herokuapp.com' method='post'>
                 <div class='mb-3'>
+                  <label for='qrcode'>QR Code</label>
+                  <select required id='qrcode' name='qrcode' class='form-select'>
+                    <option></option>
+                    <option value='static'  #{qrcode_data['qrcode'] == 'static'  ? 'selected' : ''}>Static</option>
+                    <option value='dynamic' #{qrcode_data['qrcode'] == 'dynamic' ? 'selected' : ''}>Dynamic</option>
+                  </select>
+                </div>
+                <div class='mb-3'>
                   <label for='pix_key'>Pix key</label>
-                  <input type='text' class='form-control' id='pix_key' value='#{qrcode_data["pix_key"]}' name='pix_key'>
+                  <div class='input-group'>
+                    <button class='btn btn-outline-secondary dropdown-toggle' type='button' data-bs-toggle='dropdown'>Type</button>
+                    <ul class='dropdown-menu'>
+                      <li><a class='dropdown-item' href='#'>CPF</a></li>
+                      <li><a class='dropdown-item' href='#'>Phone</a></li>
+                      <li><a class='dropdown-item' href='#'>Email</a></li>
+                      <li><a class='dropdown-item' href='#'>Random key</a></li>
+                    </ul>
+                    <input type='text' class='form-control' id='pix_key' value='#{qrcode_data["pix_key"]}' name='pix_key'>
+                  </div>
                 </div>
                 <div class='mb-3'>
                   <label for='url'>URL</label>
-                  <input type='text' class='form-control' id='url' value='#{qrcode_data["url"]}' name='url'>
+                  <input type='url' pattern='https?://.+' class='form-control' id='url' value='#{qrcode_data["url"]}' name='url'>
                 </div>
                 <div class='mb-3'>
                   <label for='description'>Description</label>
-                  <input required type='text' class='form-control' id='description' value='#{qrcode_data["description"]}' name='description'>
+                  <input required maxlength='10' type='text' class='form-control' id='description' value='#{qrcode_data["description"]}' name='description'>
                 </div>
                 <div class='mb-3'>
                   <label for='merchant_name'>Merchant name</label>
-                  <input required type='text' class='form-control' id='merchant_name' value='#{qrcode_data["merchant_name"]}' name='merchant_name'>
+                  <input required maxlength='10' type='text' class='form-control' id='merchant_name' value='#{qrcode_data["merchant_name"]}' name='merchant_name'>
                 </div>
                 <div class='mb-3'>
                   <label for='merchant_city'>Merchant city</label>
-                  <input required type='text' class='form-control' id='merchant_city' value='#{qrcode_data["merchant_city"]}' name='merchant_city'>
+                  <input required maxlength='10' type='text' class='form-control' id='merchant_city' value='#{qrcode_data["merchant_city"]}' name='merchant_city'>
                 </div>
                 <div class='mb-3'>
                   <label for='transaction_id'>Transaction ID</label>
-                  <input required type='text' class='form-control' id='transaction_id' value='#{qrcode_data["transaction_id"]}' name='transaction_id'>
+                  <input required maxlength='10' type='text' class='form-control' id='transaction_id' value='#{qrcode_data["transaction_id"]}' name='transaction_id'>
                 </div>
                 <div class='mb-3'>
                   <label for='amount'>Amount</label>
-                  <input required type='text' class='form-control' id='amount' value='#{qrcode_data["amount"]}' name='amount'>
+                  <input required pattern='[0-9]+\.[0-9][0-9]' type='tel' class='form-control' id='amount' value='#{qrcode_data["amount"]}' name='amount'>
                 </div>
                 <div class='mb-3'>
                   <label for='currency'>Currency</label>
                   <select required id='currency' name='currency' class='form-select'>
-                    <option value='986' selected>Brazilian Real (R$)</option>
+                    <option></option>
+                    <option value='986' #{qrcode_data['currency'] == '986' ? 'selected' : ''}>Brazilian Real (R$)</option>
                   </select>
                 </div>
                 <div class='mb-3'>
                   <label for='country_code'>Country</label>
                   <select required id='country_code' name='country_code' class='form-select'>
-                    <option value='BR' selected>Brazil</option>
+                    <option></option>
+                    <option value='BR' #{qrcode_data['country_code'] == 'BR' ? 'selected' : ''}>Brazil</option>
                   </select>
                 </div>
                 <div class='mb-3'>
                   <label for='postal_code'>Postal code</label>
-                  <input type='text' class='form-control' id='postal_code' value='#{qrcode_data["postal_code"]}' name='postal_code'>
+                  <input pattern='[0-9]{8}' type='tel' class='form-control' id='postal_code' value='#{qrcode_data["postal_code"]}' name='postal_code'>
                 </div>
                 <div class='mb-3'>
                   <label for='repeatable'>Repeatable?</label>
                   <select required id='repeatable' name='repeatable' class='form-select'>
-                    <option selected></option>
-                    <option value='t'>Yes</option>
-                    <option value='f'>No</option>
+                    <option></option>
+                    <option value='t' #{qrcode_data['repeatable'] == 't' ? 'selected' : ''}>Yes</option>
+                    <option value='f' #{qrcode_data['repeatable'] == 'f' ? 'selected' : ''}>No</option>
                   </select>
                 </div>
                 <div class='d-grid gap-2'>
