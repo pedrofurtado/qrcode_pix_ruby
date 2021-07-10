@@ -98,6 +98,10 @@ puts pix.base64
 * https://blog.juno.com.br/pix-qr-code-estatico-x-qr-code-dinamico
 * https://github.com/entria/awesome-pix
 * https://zxing.org/w/decode.jspx
+* https://github.com/hiagodotme/gpix
+* https://github.com/EnssureIT/faz-um-pix
+* https://github.com/jesobreira/pixkey
+* https://github.com/pedrinholemes/pix-br
 
 ## Execute tests/specs
 
