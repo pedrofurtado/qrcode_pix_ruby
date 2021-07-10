@@ -62,30 +62,24 @@ def generate_html_with(env)
               <br>
               <br>
               <form action='https://qrcode-pix-ruby.herokuapp.com' method='post'>
-                <div class='mb-3'>
-                  <label for='qrcode'>QR Code</label>
-                  <select required id='qrcode' name='qrcode' class='form-select'>
-                    <option></option>
-                    <option value='static'  #{qrcode_data['qrcode'] == 'static'  ? 'selected' : ''}>Static</option>
-                    <option value='dynamic' #{qrcode_data['qrcode'] == 'dynamic' ? 'selected' : ''}>Dynamic</option>
-                  </select>
-                </div>
-                <div class='mb-3'>
-                  <label for='pix_key'>Pix key</label>
-                  <div class='input-group'>
-                    <button class='btn btn-outline-secondary dropdown-toggle' type='button' data-bs-toggle='dropdown'>Type</button>
-                    <ul class='dropdown-menu'>
-                      <li><a class='dropdown-item' href='#'>CPF</a></li>
-                      <li><a class='dropdown-item' href='#'>Phone</a></li>
-                      <li><a class='dropdown-item' href='#'>Email</a></li>
-                      <li><a class='dropdown-item' href='#'>Random key</a></li>
-                    </ul>
-                    <input type='text' class='form-control' id='pix_key' value='#{qrcode_data["pix_key"]}' name='pix_key'>
+                <div class='row mb-3'>
+                  <div class='col'>
+                    <label for='pix_key'>Pix key</label>
+                    <div class='input-group'>
+                      <button class='btn btn-outline-secondary dropdown-toggle' type='button' data-bs-toggle='dropdown'>Key</button>
+                      <ul class='dropdown-menu'>
+                        <li><a class='dropdown-item' href='#'>CPF</a></li>
+                        <li><a class='dropdown-item' href='#'>Phone</a></li>
+                        <li><a class='dropdown-item' href='#'>Email</a></li>
+                        <li><a class='dropdown-item' href='#'>Random key</a></li>
+                      </ul>
+                      <input type='text' class='form-control' id='pix_key' value='#{qrcode_data["pix_key"]}' name='pix_key'>
+                    </div>
                   </div>
-                </div>
-                <div class='mb-3'>
-                  <label for='url'>URL</label>
-                  <input type='url' pattern='https?://.+' class='form-control' id='url' value='#{qrcode_data["url"]}' name='url'>
+                  <div class='col'>
+                    <label for='url'>URL</label>
+                    <input type='url' pattern='https?:\/\/.+' class='form-control' id='url' value='#{qrcode_data["url"]}' name='url'>
+                  </div>
                 </div>
                 <div class='mb-3'>
                   <label for='description'>Description</label>
