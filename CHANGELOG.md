@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.4.0] - 2021-07-10
+
+- Add URL option for PIX, in order to generate dynamic QR Codes
+
 ## [0.3.4] - 2021-06-28
 
 - Fix behavior of EMV field 'repeatable' (the logic was inversed)
