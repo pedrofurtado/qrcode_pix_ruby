@@ -29,7 +29,7 @@ def generate_html_with(env)
       </div>
     HTML
 
-    data_uri = "<img style='max-width: 100%;' src='#{pix.base64}'>"
+    data_uri = "<img style='max-width: 100%; display: block; margin: 0 auto;' src='#{pix.base64}'>"
   end
 
   StringIO.new <<-HTML
@@ -135,7 +135,7 @@ def generate_html_with(env)
                     <option value='f' #{qrcode_data['repeatable'] == 'f' ? 'selected' : ''}>No</option>
                   </select>
                 </div>
-                <div class='d-grid gap-2'>
+                <div class='d-grid gap-2' style='padding-bottom: 20px;'>
                   <button type='submit' class='btn btn-lg btn-primary'>Generate</button>
                 </div>
               </form>
@@ -145,8 +145,6 @@ def generate_html_with(env)
               <br>
               <br>
               #{payload}
-              <br>
-              <br>
               #{data_uri}
             </div>
           </div>
