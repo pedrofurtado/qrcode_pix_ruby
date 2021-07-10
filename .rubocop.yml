@@ -6,7 +6,7 @@ AllCops:
     - demo/*
 
 Style/RegexpLiteral:
-  EnforcedStyle: slashes
+  Enabled: false
 
 Layout/LineLength:
   Max: 120
