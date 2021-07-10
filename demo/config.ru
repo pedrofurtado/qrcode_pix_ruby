@@ -63,23 +63,20 @@ def generate_html_with(env)
               <br>
               <form action='https://qrcode-pix-ruby.herokuapp.com' method='post'>
                 <div class='mb-3'>
-                  <div class='form-text'>For static PIX, please fill the 'Pix key' field. For dynamic PIX, fill the 'URL' field.</div>
+                  <div class='form-text'>For static Pix, please fill the 'Pix key' field. For dynamic Pix, fill the 'URL' field. Do not fill both.</div>
                 </div>
                 <div class='row mb-3'>
                   <div class='col'>
                     <label for='pix_key'>Pix key</label>
-                    <div class='input-group'>
-                      <button class='btn btn-outline-secondary dropdown-toggle' type='button' data-bs-toggle='dropdown'>Key</button>
-                      <ul class='dropdown-menu'>
-                        <li><a class='dropdown-item' href='#'>CPF</a></li>
-                        <li><a class='dropdown-item' href='#'>Phone</a></li>
-                        <li><a class='dropdown-item' href='#'>Email</a></li>
-                        <li><a class='dropdown-item' href='#'>Random key</a></li>
-                      </ul>
-                      <input type='text' class='form-control' id='pix_key' value='#{qrcode_data["pix_key"]}' name='pix_key'>
+                    <input type='text' class='form-control' id='pix_key' value='#{qrcode_data["pix_key"]}' name='pix_key'>
+                    <div class='form-text'>
+                      Formats of keys:
+                      CPF: 12345678910 (only numbers)
+                      Phone: +5511912345678 (+55 + DDD + phone, only numbers)
+                      Email: example@mail.com
+                      Random: a6hf7jdk3nc8iK
                     </div>
                   </div>
-                  or
                   <div class='col'>
                     <label for='url'>URL</label>
                     <input type='url' pattern='https?:\/\/.+' class='form-control' id='url' value='#{qrcode_data["url"]}' name='url'>
