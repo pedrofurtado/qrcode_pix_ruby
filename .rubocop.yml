@@ -5,6 +5,9 @@ AllCops:
     - spec/*
     - demo/*
 
+Style/RegexpLiteral:
+  EnforcedStyle: percent_r
+
 Layout/LineLength:
   Max: 120
   Exclude:
