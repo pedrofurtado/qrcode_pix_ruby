@@ -10,6 +10,7 @@ module QrcodePixRuby
     ID_MERCHANT_ACCOUNT_INFORMATION_GUI         = '00'
     ID_MERCHANT_ACCOUNT_INFORMATION_KEY         = '01'
     ID_MERCHANT_ACCOUNT_INFORMATION_DESCRIPTION = '02'
+    ID_MERCHANT_ACCOUNT_INFORMATION_URL         = '25'
     ID_MERCHANT_CATEGORY_CODE                   = '52'
     ID_TRANSACTION_CURRENCY                     = '53'
     ID_TRANSACTION_AMOUNT                       = '54'
@@ -22,6 +23,7 @@ module QrcodePixRuby
     ID_CRC16                                    = '63'
 
     attr_accessor :pix_key,
+                  :url,
                   :repeatable,
                   :currency,
                   :country_code,
@@ -77,9 +79,10 @@ module QrcodePixRuby
 
     def emv_merchant
       merchant_gui         = emv(ID_MERCHANT_ACCOUNT_INFORMATION_GUI, 'BR.GOV.BCB.PIX')
-      merchant_pix_key     = emv(ID_MERCHANT_ACCOUNT_INFORMATION_KEY, pix_key)
+      merchant_pix_key     = emv(ID_MERCHANT_ACCOUNT_INFORMATION_KEY, pix_key) if pix_key
       merchant_description = emv(ID_MERCHANT_ACCOUNT_INFORMATION_DESCRIPTION, description) if description
-      emv(ID_MERCHANT_ACCOUNT_INFORMATION, "#{merchant_gui}#{merchant_pix_key}#{merchant_description}")
+      merchant_url         = emv(ID_MERCHANT_ACCOUNT_INFORMATION_URL, url.gsub(/https?:\/\//, '')) if url
+      emv(ID_MERCHANT_ACCOUNT_INFORMATION, "#{merchant_gui}#{merchant_pix_key}#{merchant_description}#{merchant_url}")
     end
 
     def emv_additional_data

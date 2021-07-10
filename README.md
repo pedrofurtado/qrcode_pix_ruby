@@ -31,11 +31,12 @@ Or install it yourself as:
 
 ## Usage
 
+### Static QR Code
+
 ```ruby
 require 'qrcode_pix_ruby'
 
-pix = QrcodePixRuby::Payload.new
-
+pix                = QrcodePixRuby::Payload.new
 pix.pix_key        = 'minhachavedopix'
 pix.description    = 'Pagamento do pedido 123456'
 pix.merchant_name  = 'Fulano de Tal'
@@ -50,7 +51,27 @@ pix.repeatable     = false
 # QRCode copia-e-cola
 puts pix.payload
 
-# QRCode estático (para uso em imagens)
+# QRCode para uso em imagens
+puts pix.base64
+```
+
+### Dynamic QR Code
+
+```ruby
+require 'qrcode_pix_ruby'
+
+pix                = QrcodePixRuby::Payload.new
+pix.url            = 'https://example.com'
+pix.merchant_name  = 'Fulano de Tal'
+pix.merchant_city  = 'SAO PAULO'
+pix.amount         = '100.00'
+pix.transaction_id = 'TID12345'
+pix.repeatable     = false
+
+# QRCode copia-e-cola
+puts pix.payload
+
+# QRCode para uso em imagens
 puts pix.base64
 ```
 
@@ -68,6 +89,7 @@ puts pix.base64
 * https://openpix.com.br/qrcode/scanner
 * https://openpix.com.br/qrcode/debug
 * https://github.com/william-costa/wdev-qrcode-pix-estatico-php
+* https://github.com/william-costa/wdev-qrcode-pix-php
 * https://www.youtube.com/watch?v=eO11iFgrdCA
 * https://qrcodepix.dinheiro.tech
 * http://decoder.qrcodepix.dinheiro.tech
@@ -75,6 +97,7 @@ puts pix.base64
 * https://gerencianet.com.br/blog/qr-code-estatico-qr-code-dinamico-no-pix
 * https://blog.juno.com.br/pix-qr-code-estatico-x-qr-code-dinamico
 * https://github.com/entria/awesome-pix
+* https://zxing.org/w/decode.jspx
 
 ## Execute tests/specs
 
