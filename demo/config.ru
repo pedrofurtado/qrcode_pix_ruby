@@ -10,6 +10,7 @@ def generate_html_with(env)
 
   unless qrcode_data.empty?
     pix.pix_key        = qrcode_data['pix_key']           unless qrcode_data['pix_key'].nil?
+    pix.url            = qrcode_data['url']               unless qrcode_data['url'].nil?
     pix.description    = qrcode_data['description']       unless qrcode_data['description'].nil?
     pix.merchant_name  = qrcode_data['merchant_name']     unless qrcode_data['merchant_name'].nil?
     pix.merchant_city  = qrcode_data['merchant_city']     unless qrcode_data['merchant_city'].nil?
@@ -63,7 +64,11 @@ def generate_html_with(env)
               <form action='https://qrcode-pix-ruby.herokuapp.com' method='post'>
                 <div class='mb-3'>
                   <label for='pix_key'>Pix key</label>
-                  <input required type='text' class='form-control' id='pix_key' value='#{qrcode_data["pix_key"]}' name='pix_key'>
+                  <input type='text' class='form-control' id='pix_key' value='#{qrcode_data["pix_key"]}' name='pix_key'>
+                </div>
+                <div class='mb-3'>
+                  <label for='url'>URL</label>
+                  <input type='text' class='form-control' id='url' value='#{qrcode_data["url"]}' name='url'>
                 </div>
                 <div class='mb-3'>
                   <label for='description'>Description</label>
@@ -99,7 +104,7 @@ def generate_html_with(env)
                 </div>
                 <div class='mb-3'>
                   <label for='postal_code'>Postal code</label>
-                  <input required type='text' class='form-control' id='postal_code' value='#{qrcode_data["postal_code"]}' name='postal_code'>
+                  <input type='text' class='form-control' id='postal_code' value='#{qrcode_data["postal_code"]}' name='postal_code'>
                 </div>
                 <div class='mb-3'>
                   <label for='repeatable'>Repeatable?</label>
@@ -127,8 +132,7 @@ def generate_html_with(env)
         </div>
         <script>
           new ClipboardJS('.btn-clipboard');
-
-          Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]')).forEach(function (tooltipTriggerEl) {
+          Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]')).forEach(function(tooltipTriggerEl) {
             new bootstrap.Tooltip(tooltipTriggerEl);
           });
         </script>
