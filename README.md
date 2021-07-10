@@ -36,8 +36,7 @@ Or install it yourself as:
 ```ruby
 require 'qrcode_pix_ruby'
 
-pix = QrcodePixRuby::Payload.new
-
+pix                = QrcodePixRuby::Payload.new
 pix.pix_key        = 'minhachavedopix'
 pix.description    = 'Pagamento do pedido 123456'
 pix.merchant_name  = 'Fulano de Tal'
@@ -60,8 +59,6 @@ puts pix.base64
 
 ```ruby
 require 'qrcode_pix_ruby'
-
-pix = QrcodePixRuby::Payload.new
 
 pix                = QrcodePixRuby::Payload.new
 pix.url            = 'https://example.com'
