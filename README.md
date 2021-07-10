@@ -29,7 +29,7 @@ Or install it yourself as:
 
     gem install qrcode_pix_ruby
 
-## Usage
+## Usage (examples)
 
 ### Static QR Code
 
