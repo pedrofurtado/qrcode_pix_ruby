@@ -66,7 +66,6 @@ RSpec.describe QrcodePixRuby do
 
         it 'has a valid payload' do
           expect(payload).to eq '00020101021226600014BR.GOV.BCB.PIX0138pedro.felipe.azevedo.furtado@gmail.com5204000053031235802BR5913PEDRO FURTADO6009SAO PAULO62070503***63047E2C'
-
         end
 
         it 'has a valid base64' do
