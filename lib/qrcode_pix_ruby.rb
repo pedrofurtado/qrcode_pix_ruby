@@ -3,5 +3,4 @@
 require_relative 'qrcode_pix_ruby/version'
 require_relative 'qrcode_pix_ruby/payload'
 
-module QrcodePixRuby
-end
+module QrcodePixRuby end
