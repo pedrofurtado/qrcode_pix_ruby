@@ -3,6 +3,8 @@
 require 'rqrcode'
 
 module QrcodePixRuby
+  class PayloadArgumentError < ArgumentError; end
+
   class Payload
     ID_PAYLOAD_FORMAT_INDICATOR                 = '00'
     ID_POINT_OF_INITIATION_METHOD               = '01'
@@ -22,17 +24,17 @@ module QrcodePixRuby
     ID_ADDITIONAL_DATA_FIELD_TEMPLATE_TXID      = '05'
     ID_CRC16                                    = '63'
 
-    attr_accessor :pix_key,
-                  :url,
-                  :repeatable,
-                  :currency,
-                  :country_code,
-                  :description,
-                  :postal_code,
-                  :merchant_name,
-                  :merchant_city,
-                  :transaction_id,
-                  :amount
+    ATTRIBUTES = %i[pix_key url repeatable currency country_code description postal_code
+                    merchant_name merchant_city transaction_id amount].freeze
+
+    def initialize(**kwargs)
+      verify_kwargs(kwargs.keys)
+
+      ATTRIBUTES.each do |attribute|
+        singleton_class.class_eval { attr_accessor attribute }
+        instance_variable_set("@#{attribute}", kwargs[attribute])
+      end
+    end
 
     def payload
       p = ''
@@ -67,6 +69,14 @@ module QrcodePixRuby
     end
 
     private
+
+    def verify_kwargs(keys)
+      unknows = keys - ATTRIBUTES
+
+      return unless unknows.any?
+
+      raise QrcodePixRuby::PayloadArgumentError, "Unknown attributes: #{unknows.join(', ')}"
+    end
 
     def emv(id, value)
       size = value.to_s.length.to_s.rjust(2, '0')
