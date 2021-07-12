@@ -1,5 +1,11 @@
 ## [Unreleased]
 
+## [0.5.0] -2021-07-13
+
+- Add option to pass Pix informations directly in initializer
+- CI speedup
+- Specs reorganization
+
 ## [0.4.0] - 2021-07-10
 
 - Add URL option for PIX, in order to generate dynamic QR Codes
