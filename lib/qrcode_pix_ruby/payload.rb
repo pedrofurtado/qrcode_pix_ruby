@@ -71,11 +71,9 @@ module QrcodePixRuby
     private
 
     def verify_kwargs(keys)
-      unknows = keys - ATTRIBUTES
-
-      return unless unknows.any?
-
-      raise QrcodePixRuby::PayloadArgumentError, "Unknown attributes: #{unknows.join(', ')}"
+      unknowns = keys - ATTRIBUTES
+      return unless unknowns.any?
+      raise QrcodePixRuby::PayloadArgumentError, "Unknown attributes: #{unknowns.join(', ')}"
     end
 
     def emv(id, value)
