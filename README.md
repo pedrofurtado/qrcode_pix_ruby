@@ -36,17 +36,18 @@ Or install it yourself as:
 ```ruby
 require 'qrcode_pix_ruby'
 
-pix                = QrcodePixRuby::Payload.new
-pix.pix_key        = 'minhachavedopix'
-pix.description    = 'Pagamento do pedido 123456'
-pix.merchant_name  = 'Fulano de Tal'
-pix.merchant_city  = 'SAO PAULO'
-pix.transaction_id = 'TID12345'
-pix.amount         = '100.00'
-pix.currency       = '986'
-pix.country_code   = 'BR'
-pix.postal_code    = '01131010'
-pix.repeatable     = false
+pix = QrcodePixRuby::Payload.new(
+  pix_key:        'minhachavedopix',
+  description:    'Pagamento do pedido 123456',
+  merchant_name:  'Fulano de Tal',
+  merchant_city:  'SAO PAULO',
+  transaction_id: 'TID12345',
+  amount:         '100.00',
+  currency:       '986',
+  country_code:   'BR',
+  postal_code:    '01131010',
+  repeatable:     false
+)
 
 # QRCode copia-e-cola
 puts pix.payload
@@ -60,13 +61,14 @@ puts pix.base64
 ```ruby
 require 'qrcode_pix_ruby'
 
-pix                = QrcodePixRuby::Payload.new
-pix.url            = 'https://example.com'
-pix.merchant_name  = 'Fulano de Tal'
-pix.merchant_city  = 'SAO PAULO'
-pix.amount         = '100.00'
-pix.transaction_id = 'TID12345'
-pix.repeatable     = false
+pix = QrcodePixRuby::Payload.new(
+  url:            'https://example.com',
+  merchant_name:  'Fulano de Tal',
+  merchant_city:  'SAO PAULO',
+  amount:         '100.00',
+  transaction_id: 'TID12345',
+  repeatable:     false
+)
 
 # QRCode copia-e-cola
 puts pix.payload
