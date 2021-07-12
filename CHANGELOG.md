@@ -1,6 +1,6 @@
 ## [Unreleased]
 
-## [0.5.0] -2021-07-13
+## [0.5.0] - 2021-07-13
 
 - Add option to pass Pix informations directly in initializer
 - CI speedup
