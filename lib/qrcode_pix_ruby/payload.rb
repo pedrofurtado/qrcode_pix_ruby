@@ -72,7 +72,9 @@ module QrcodePixRuby
 
     def verify_kwargs(keys)
       unknowns = keys - ATTRIBUTES
+
       return unless unknowns.any?
+
       raise QrcodePixRuby::PayloadArgumentError, "Unknown attributes: #{unknowns.join(', ')}"
     end
 
