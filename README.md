@@ -49,10 +49,14 @@ pix = QrcodePixRuby::Payload.new(
   repeatable:     false
 )
 
+# If needed, change the attributes value later
+pix.pix_key = 'minhaoutrachavepix'
+pix.merchant_city = 'BRASILIA'
+
 # QRCode copia-e-cola
 puts pix.payload
 
-# QRCode para uso em imagens
+# QRCode for images
 puts pix.base64
 ```
 
@@ -69,6 +73,10 @@ pix = QrcodePixRuby::Payload.new(
   transaction_id: 'TID12345',
   repeatable:     false
 )
+
+# If needed, change the attributes value later
+pix.url = 'https://another-example.com'
+pix.amount = 1.50
 
 # QRCode copia-e-cola
 puts pix.payload
