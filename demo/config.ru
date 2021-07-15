@@ -9,17 +9,13 @@ def generate_html_with(env)
   pix         = QrcodePixRuby::Payload.new
 
   unless qrcode_data.empty?
-    pix.pix_key        = qrcode_data['pix_key']           if !qrcode_data['pix_key'].nil?        && !qrcode_data['pix_key'].empty?
-    pix.url            = qrcode_data['url']               if !qrcode_data['url'].nil?            && !qrcode_data['url'].empty?
-    pix.description    = qrcode_data['description']       if !qrcode_data['description'].nil?    && !qrcode_data['description'].empty?
-    pix.merchant_name  = qrcode_data['merchant_name']     if !qrcode_data['merchant_name'].nil?  && !qrcode_data['merchant_name'].empty?
-    pix.merchant_city  = qrcode_data['merchant_city']     if !qrcode_data['merchant_city'].nil?  && !qrcode_data['merchant_city'].empty?
-    pix.transaction_id = qrcode_data['transaction_id']    if !qrcode_data['transaction_id'].nil? && !qrcode_data['transaction_id'].empty?
-    pix.amount         = qrcode_data['amount']            if !qrcode_data['amount'].nil?         && !qrcode_data['amount'].empty?
-    pix.currency       = qrcode_data['currency']          if !qrcode_data['currency'].nil?       && !qrcode_data['currency'].empty?
-    pix.country_code   = qrcode_data['country_code']      if !qrcode_data['country_code'].nil?   && !qrcode_data['country_code'].empty?
-    pix.postal_code    = qrcode_data['postal_code']       if !qrcode_data['postal_code'].nil?    && !qrcode_data['postal_code'].empty?
-    pix.repeatable     = qrcode_data['repeatable'] == 't' if !qrcode_data['repeatable'].nil?     && !qrcode_data['repeatable'].empty?
+    pix.repeatable = qrcode_data.delete('repeatable') == 't'
+
+    qrcode_data.keys.each do |key|
+      value = qrcode_data[key].to_s
+
+      pix.public_send("#{key}=", value) unless value.empty?
+    end
 
     payload = <<-HTML
       <label for='payload'>Payload</label>
