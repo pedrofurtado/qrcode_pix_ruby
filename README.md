@@ -135,6 +135,7 @@ https://qrcode-pix-ruby.herokuapp.com
 * https://github.com/EnssureIT/faz-um-pix
 * https://github.com/jesobreira/pixkey
 * https://github.com/pedrinholemes/pix-br
+* https://www.bcb.gov.br/content/estabilidadefinanceira/SiteAssets/Manual%20do%20BR%20Code.pdf
 
 ## Contributing
 
