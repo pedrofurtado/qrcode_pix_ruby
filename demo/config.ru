@@ -61,7 +61,7 @@ def generate_html_with(env)
               <strong>QRCode informations</strong>
               <br>
               <br>
-              <form action='https://qrcode-pix-ruby.herokuapp.com' method='post'>
+              <form action='/' method='post'>
                 <div class='mb-3'>
                   <div class='form-text'>
                     For static Pix, please fill the 'Pix key' field.<br>
