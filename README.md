@@ -31,6 +31,19 @@ Or install it yourself as:
 
 ## Usage (examples)
 
+### Available parameters
+
+- pix_key/url
+- repeatable
+- currency
+- country_code
+- description
+- postal_code
+- merchant_name
+- merchant_city
+- transaction_id
+- amount
+
 ### Static QR Code
 
 ```ruby
