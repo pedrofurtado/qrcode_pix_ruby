@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # test
 
 source 'https://rubygems.org'
