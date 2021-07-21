@@ -18,4 +18,4 @@ mergeable:
     pass:
       - do: comment
         payload:
-          body: It looks old 🕰️. Pinging maintainers: @pedrofurtado @marciojg
+          body: It looks old 🕰️
