@@ -13,7 +13,6 @@ def generate_html_with(env)
 
     qrcode_data.keys.each do |key|
       value = qrcode_data[key].to_s
-
       pix.public_send("#{key}=", value) unless value.empty?
     end
 
