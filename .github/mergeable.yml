@@ -1,5 +1,11 @@
 version: 2
 mergeable:
+  - when: pull_request.opened
+    validate: []
+    pass:
+      - do: comment
+        payload:
+          body: Thanks for creating a pull request! A maintainer will review your changes shortly.
   - when: pull_request.*
     validate:
       - do: description
