@@ -13,7 +13,7 @@ mergeable:
   - when: schedule.repository
     validate:
       - do: stale
-        days: 20
+        days: 5
         type: pull_request, issues
     pass:
       - do: comment
