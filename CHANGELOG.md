@@ -5,6 +5,7 @@
 - Add option to pass Pix informations directly in initializer
 - CI speedup
 - Specs reorganization
+- fake change
 
 ## [0.4.0] - 2021-07-10
 
