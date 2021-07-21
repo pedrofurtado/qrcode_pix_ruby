@@ -1,0 +1,21 @@
+version: 2
+mergeable:
+  - when: pull_request.*
+    validate:
+      - do: description
+        no_empty:
+          enabled: true
+          message: Please, provide for us an awesome description to your PR 🤝
+      - do: dependent
+        changed:
+          file: '*'
+          required: ['CHANGELOG.md']
+  - when: schedule.repository
+    validate:
+      - do: stale
+        days: 20
+        type: pull_request, issues
+    pass:
+      - do: comment
+        payload:
+          body: It looks old 🕰️. Pinging maintainers: @pedrofurtado @marciojg
