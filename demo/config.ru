@@ -9,11 +9,9 @@ def generate_html_with(env)
   pix         = QrcodePixRuby::Payload.new
 
   unless qrcode_data.empty?
-    pix.repeatable = qrcode_data.delete('repeatable') == 't'
-
     qrcode_data.keys.each do |key|
-      value = qrcode_data[key].to_s
-      pix.public_send("#{key}=", value) unless value.empty?
+      v = qrcode_data[key]
+      pix.public_send("#{key}=", key == 'repeatable' ? v == 't' : v) unless v.empty? && v.nil?
     end
 
     payload = <<-HTML
