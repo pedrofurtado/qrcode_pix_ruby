@@ -11,7 +11,7 @@ def generate_html_with(env)
   unless qrcode_data.empty?
     qrcode_data.keys.each do |key|
       v = qrcode_data[key]
-      pix.public_send("#{key}=", key == 'repeatable' ? v == 't' : v) unless v.empty? && v.nil?
+      pix.public_send("#{key}=", key == 'repeatable' ? v == 't' : v) unless v.empty? || v.nil?
     end
 
     payload = <<-HTML
