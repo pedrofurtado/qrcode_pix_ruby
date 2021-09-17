@@ -161,7 +161,9 @@ docker run -p 3000:3000 -it qrcode_pix_ruby_demo
 * https://github.com/EnssureIT/faz-um-pix
 * https://github.com/jesobreira/pixkey
 * https://github.com/pedrinholemes/pix-br
+* https://github.com/ceciliadeveza/gerarqrcodepix
 * https://www.bcb.gov.br/content/estabilidadefinanceira/SiteAssets/Manual%20do%20BR%20Code.pdf
+* https://www.bcb.gov.br/content/estabilidadefinanceira/spb_docs/ManualBRCode.pdf
 
 ## Contributing
 
