@@ -34,6 +34,7 @@ RSpec.describe QrcodePixRuby do
         pix_key: 'pedro.felipe.azevedo.furtado@gmail.com',
         merchant_name: 'PEDRO FURTADO',
         merchant_city: 'SAO PAULO',
+        amount: '1.02',
         **attributes
       )
     end
@@ -84,6 +85,18 @@ RSpec.describe QrcodePixRuby do
 
         it 'has a valid base64' do
           expect(base64).to eq file_fixture('amount_100_99.base64').read
+        end
+      end
+      
+      context 'when amount is generate a small crc16 checksum' do
+        let(:attributes) { { amount: '1.02' } }
+
+        it 'has a valid payload' do
+          expect(payload).to eq '00020101021226600014BR.GOV.BCB.PIX0138pedro.felipe.azevedo.furtado@gmail.com52040000530398654041.025802BR5913PEDRO FURTADO6009SAO PAULO62070503***630409C3'
+        end
+
+        it 'has a valid base64' do
+          expect(base64).to eq file_fixture('amount_crash_checksum.base64').read
         end
       end
 
