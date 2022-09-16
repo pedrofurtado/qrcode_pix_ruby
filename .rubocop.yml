@@ -1,5 +1,5 @@
 AllCops:
-  NewCops: enable
+  NewCops: disable
   SuggestExtensions: false
   Exclude:
     - spec/*
@@ -17,9 +17,6 @@ Metrics/MethodLength:
   Max: 20
 
 Gemspec/RequiredRubyVersion:
-  Enabled: false
-
-Gemspec/RequireMFA:
   Enabled: false
 
 Style/Documentation:
