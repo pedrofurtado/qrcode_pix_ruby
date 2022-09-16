@@ -29,6 +29,9 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby-version }}
 
+      - name: Update rubygems
+        run: gem update --system
+
       - name: Install dependencies
         run: bundle install
 
