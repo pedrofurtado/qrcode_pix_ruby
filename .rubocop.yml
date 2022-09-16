@@ -19,6 +19,9 @@ Metrics/MethodLength:
 Gemspec/RequiredRubyVersion:
   Enabled: false
 
+Gemspec/RequireMFA:
+  Enabled: false
+
 Style/Documentation:
   Enabled: false
 
