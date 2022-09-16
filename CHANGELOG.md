@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+- Fixed CI
+
 ## [0.5.0] - 2021-07-13
 
 - Add option to pass Pix informations directly in initializer
