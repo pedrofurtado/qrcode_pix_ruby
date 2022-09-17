@@ -1,6 +1,7 @@
 ## [Unreleased]
 
 - Fixed CI
+- Fixed CRC16 algorithm 
 
 ## [0.5.0] - 2021-07-13
 
