@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+- ...
+
+## [0.6.0]- 2023-04-14
+
 - Fixed CI
 - Fixed CRC16 algorithm with rjust with 4 digits
 
