@@ -124,7 +124,7 @@ module QrcodePixRuby
         end
       end
 
-      "#{ID_CRC16}04#{result.to_s(16).upcase}"
+      "#{ID_CRC16}04#{result.to_s(16).upcase.rjust(4, '0')}"
     end
   end
 end
